@@ -1,0 +1,45 @@
+:root {
+  --cream:#FBF3E9;
+  --brown-dark: #5C3D2E;
+  --brown-mid: #8B5E3C;
+  --pink-soft: #F1B4B4;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--brown-dark);
+}
+
+.card {
+background-color: var(--cream);
+  border: 1px solid var(--pink-soft);
+  border-radius: 12px;
+ box-shadow: 0 2px 8px rgba(92, 61, 46, 0.08);
+  transition: transform 0.2s;
+}
+
+.card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(92, 61, 46, 0.15);
+}
+
+.card img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-title {
+   color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.btn-outline-dark {
+  color: var(--brown-mid);
+  border-color: var(--brown-mid);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--pink-soft);
+  border-color: var(--pink-soft);
+  color: var(--brown-dark);
+}

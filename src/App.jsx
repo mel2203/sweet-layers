@@ -2,15 +2,19 @@ import { useState } from 'react';
 //create a function that holds the props 
 function CakeItem({ image, title, flavor, rating, price }) {
   return (
-    <>
-      <h1> {title} </h1>
-      <p> {flavor} </p>
-      <p> {rating} </p>
-      <p> {price} </p>
-      <img src={image} alt={title} />
-    </>
+    <div className="card m-2" style={{ width: '18rem', margin: '10px' }}>
+       <img src={image} className="card-img-top" alt={title} />
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">Flavor: {flavor}</p>
+        <p className="card-text">Rating: {rating}</p>
+        <p className="card-text">Price: {price}</p>
+      </div>
+    </div>
   );
 }
+
+
 //display 
 function App() { //cakes is an array of objects that contains the information for each cake. The useState hook is used to create a state variable called cakes and a function called setCakes that can be used to update the state. The initial value of cakes is an array of three objects, each representing a different cake with its image, title, flavor, rating, and price.
   const [cakes] = useState([
@@ -24,7 +28,7 @@ function App() { //cakes is an array of objects that contains the information fo
     {
     image: "cake2.jpg",
     title: "Dreamy Vanilla Cake",
-    flavor: "Vanilla, Cherry",
+    flavor: "Vanilla",
     rating: 4.0,
     price:"RM110.00"
   },
@@ -51,10 +55,17 @@ const filteredCakes = selectedFlavor === 'All'
    // the selected flavor is updated using the setSelectedFlavor function. The filteredCakes array is then mapped over to render a CakeItem component for each cake that matches the selected flavor.
 
 return (
+  //inline css to position the filter by flavor text at the top of the page
   <div>
+    <p style={{position: 'absolute', top: '10px', left: '10px', right: '10px'}}>Filter by Flavor:
+      {filteredCakes.length} cakes
+    
+    </p>
     <div>
       {flavors.map((flavor) => (
-        <button key={flavor} onClick={() => setSelectedFlavor(flavor)}>
+        <button key={flavor} 
+        className ="btn btn-outline-dark me-2 mb-2"
+        onClick={() => setSelectedFlavor(flavor)}>
           {flavor}
         </button>
       ))}
@@ -75,11 +86,18 @@ return (
 
 }
 
-//for filtering
+//use state : setter function (setSelectedFlavor) is used to update the state of selectedFlavor when a button is clicked. This triggers a re-render of the component, 
+// and the filteredCakes array is updated based on the new selected flavor. 
+// The CakeItem components are then re-rendered with the updated list of cakes.
+//this why we use it for filtering
+//compared to javasxript where we used block:none; display or block; to hide and show the cakes, in react we use state to manage the selected flavor and filter the cakes accordingly. This allows for a more dynamic and responsive user interface.
+//because theres like no dom here
 
 
 
 
+//add bootstrap elements to function 
+//add button in the flabvors map
 
 
 
