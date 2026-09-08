@@ -8,6 +8,9 @@
 body {
   background-color: var(--cream);
   color: var(--brown-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
@@ -18,7 +21,7 @@ background-color: var(--cream);
   transition: transform 0.2s;
 }
 
-.card-hover {
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(92, 61, 46, 0.15);
 }
@@ -42,4 +45,42 @@ background-color: var(--cream);
   background-color: var(--pink-soft);
   border-color: var(--pink-soft);
   color: var(--brown-dark);
+}
+
+.app-wrapper {
+  position: relative;
+  padding: 16px;
+}
+
+.cake-count {
+  background-color: var(--pink-soft);
+  color: var(--brown-dark);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  width: fit-content;
+}
+.cake-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.cake-count {
+  background-color: var(--pink-soft);
+  color: var(--brown-dark);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
