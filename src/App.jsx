@@ -1,8 +1,18 @@
 import { useState } from 'react';
+//Notes:
+//we use fragments in jsx to separate the different elements
+//useState rerenders the page everytime it is triggered based on requirement
+//use imports and exports of files for easier and cleaner code
+
+//create a function that holds the props  
+//function will hold the parameters
+//we dont hardcode anything here because we want to create a dynamic website
+//we will pass the data through PROPS
 
 
-//create a function that holds the props 
-
+//blue print for just ONE cake card
+//instead of making like 11 different cake cards, just make one template
+//and pass the data through it using props! #smartgirlmoment
 function CakeItem({ image, title, flavor, rating, price }) {
   return (
     <div className="card m-2" style={{ width: '18rem', margin: '10px'}}>
@@ -18,9 +28,11 @@ function CakeItem({ image, title, flavor, rating, price }) {
 }
 
 
-//display 
-function App() { //cakes is an array of objects that contains the information for each cake. The useState hook is used to create a state variable called cakes and a function called setCakes that can be used to update the state. The initial value of cakes is an array of three objects, each representing a different cake with its image, title, flavor, rating, and price.
-  const [cakes] = useState([
+//display  - main component where everything lives inside of
+function App() { //cakes is an array of objects that contains the information for each cake. 
+  //so here is all the data lives, we write it here and itll pass through fx CakeItem to be displayed as cards
+
+  const cakes = [
     {
     image: "cake1.jpg",
     title: "Betsy's Chocolate Cake",
@@ -98,7 +110,22 @@ function App() { //cakes is an array of objects that contains the information fo
     rating: 4.6,
     price:"RM159.00"
   },
-  ]); 
+{
+    image: "cake12.jpg",
+    title: "Coffee Cake",
+    flavor: "Coffee",
+    rating: 4.9,
+    price:"RM169.00"
+  },
+  {
+    image: "cake13.jpg",
+    title: "Blueberry Matcha Cake",
+    flavor: "Matcha",
+    rating: 4.1,
+    price:"RM89.00"
+  }
+  
+  ]; 
 
 //for filtering each flavour
 const [selectedFlavor, setSelectedFlavor] = useState('All');
@@ -118,6 +145,17 @@ return (
 <>
 <nav className="navbar">
   <div className="navbar-inner">
+    {/* Added logo image and title wrapper */}
+<a href="#home" className="navbar-brand">
+      <img 
+        src="/sweet-layers-logo.png" 
+        alt="Sweet Layers Logo" 
+        className="navbar-logo"
+      />
+     
+    </a>
+
+
     <ul className="navbar-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#cakes">Cakes</a></li>
@@ -131,15 +169,18 @@ return (
 
 <section id="home" className="home-section">
    <h1 className="shop-logo pinyon-script-regular">Sweet Layers</h1>
-        <p className="shop-tagline varela-round-regular">Handcrafted cakes, one layer at a time</p>
+        <p className="shop-tagline varela-round-regular">Home of the sweetest cakes ❤︎ </p>
         <a href="#cakes" className="btn btn-outline-dark hero-cta">Browse Cakes</a>
       </section>
 
 
-      {/* cakes section */}
+      {/* cakes counter section */}
 <section id="cakes" className="app-wrapper">
-        <p className="cake-count">{filteredCakes.length} cakes</p>
+  <p className="cake-count">{filteredCakes.length} cakes</p>
+
 {/* flavor buttons */}
+{/* to map EACH flavor in the variable flavors, then create a button for it so data is related */}
+{/* so no need to create like 7 different buttons just for the flavours*/}
     <div className="flavor-buttons">
       {flavors.map((flavor) => (
         <button
@@ -151,6 +192,8 @@ return (
         </button>
       ))}
     </div>
+
+{/*  when we use a usestate, we wanna  */}
 
     <div className="cake-list">
       {filteredCakes.map((cake) => (
@@ -173,8 +216,7 @@ return (
         <p className="section-text">
           Sweet Layers started as a small home kitchen project and grew into a
           neighborhood favorite for handcrafted, made-to-order cakes. Every cake
-          is baked fresh, layered by hand, and decorated with real ingredients —
-          no shortcuts, no mixes.
+          is baked fresh, layered by hand, and decorated with real ingredients. Each layer made with love!
         </p>
       </section>
 
@@ -208,17 +250,7 @@ return (
 
 
 
-
-
-
-
-
-
-
 export default App;
-
-
-
 
 
 
