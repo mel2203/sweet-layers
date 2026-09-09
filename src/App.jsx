@@ -1,5 +1,8 @@
 import { useState } from 'react';
+
+
 //create a function that holds the props 
+
 function CakeItem({ image, title, flavor, rating, price }) {
   return (
     <div className="card m-2" style={{ width: '18rem', margin: '10px'}}>
@@ -34,7 +37,7 @@ function App() { //cakes is an array of objects that contains the information fo
   },
     {
     image: "cake3.jpg",
-    title: "The Red and White",
+    title: "Indulgent Red Velvet Cake",
     flavor: "Red Velvet",
     rating: 4.8,
     price:"RM150.00"
@@ -53,6 +56,48 @@ function App() { //cakes is an array of objects that contains the information fo
     rating: 4.6,
     price:"RM89.00"
   },
+{
+    image: "cake6.jpg",
+    title: "Blueberry Cheesecake",
+    flavor: "Cheesecake",
+    rating: 4.7,
+    price:"RM79.00"
+  },
+  {
+    image: "cake7.jpg",
+    title: "Raspberry Pistachio Cake",
+    flavor: "Pistachio",
+    rating: 4.3,
+    price:"RM120.00"
+  },
+  {
+    image: "cake8.jpg",
+    title: "Fruit Frenzy Cake",
+    flavor: "Vanilla",
+    rating: 4.7,
+    price:"RM99.00"
+  },
+  {
+    image: "cake9.jpg",
+    title: "Black Forest Cake",
+    flavor: "Chocolate",
+    rating: 4.2,
+    price:"RM109.00"
+  },
+{
+    image: "cake10.jpg",
+    title: "Strawberry Matcha Cake",
+    flavor: "Matcha",
+    rating: 4.8,
+    price:"RM189.00"
+  },
+  {
+    image: "cake11.jpg",
+    title: "Strawberry Cheesecake",
+    flavor: "Cheesecake",
+    rating: 4.6,
+    price:"RM159.00"
+  },
   ]); 
 
 //for filtering each flavour
@@ -63,25 +108,38 @@ const filteredCakes = selectedFlavor === 'All'
   ? cakes
   : cakes.filter((cake) => cake.flavor === selectedFlavor);
 
-  const flavors = ["All", "Chocolate", "Vanilla", "Red Velvet", "Coffee", "Cheesecake"];
+  const flavors = ["All", "Chocolate", "Vanilla", "Red Velvet", "Coffee", "Cheesecake", "Pistachio", "Matcha"];
 
   // //create buttons for each flavor. When a button is clicked, 
    // the selected flavor is updated using the setSelectedFlavor function. The filteredCakes array is then mapped over to render a CakeItem component for each cake that matches the selected flavor.
 
 return (
-  //inline css to position the filter by flavor text at the top of the page
-  <div className="app-wrapper">
-    <div className="top-bar">
-      <header className="app-header">
-        <h1 className="shop-logo">Sweet Layers</h1>
-        <p className="shop-tagline">Handcrafted cakes, one layer at a time</p>
-      </header>
-      </div>
+  //nav bar 
+<>
+<nav className="navbar">
+  <div className="navbar-inner">
+    <ul className="navbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#cakes">Cakes</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <div>
-      <p className="cake-count">{filteredCakes.length} cakes</p>
-      </div>
+{/* home section */}
 
+<section id="home" className="home-section">
+   <h1 className="shop-logo pinyon-script-regular">Sweet Layers</h1>
+        <p className="shop-tagline varela-round-regular">Handcrafted cakes, one layer at a time</p>
+        <a href="#cakes" className="btn btn-outline-dark hero-cta">Browse Cakes</a>
+      </section>
+
+
+      {/* cakes section */}
+<section id="cakes" className="app-wrapper">
+        <p className="cake-count">{filteredCakes.length} cakes</p>
+{/* flavor buttons */}
     <div className="flavor-buttons">
       {flavors.map((flavor) => (
         <button
@@ -106,11 +164,33 @@ return (
         />
       ))}
     </div>
-  </div>
-);
+  </section>
+  
+
+ {/* ABOUT */}
+ <section id="about" className="about-section">
+        <h2 className="section-title">About Us</h2>
+        <p className="section-text">
+          Sweet Layers started as a small home kitchen project and grew into a
+          neighborhood favorite for handcrafted, made-to-order cakes. Every cake
+          is baked fresh, layered by hand, and decorated with real ingredients —
+          no shortcuts, no mixes.
+        </p>
+      </section>
+
+       {/* contact */}
+      <section id="contact" className="contact-section">
+        <h2 className="section-title">Contact Us</h2>
+        <p className="section-text">Have a custom order or a question? Reach out.</p>
+        <ul className="contact-list">
+          <li>📍 Shah Alam, Selangor</li>
+          <li>📞 +60 12-649-6467</li>
+          <li>✉️ hello@sweetlayers.com</li>
+        </ul>
+      </section>
+</>
+  );
 }
-
-
 
 //use state : setter function (setSelectedFlavor) is used to update the state of selectedFlavor when a button is clicked. This triggers a re-render of the component, 
 // and the filteredCakes array is updated based on the new selected flavor. 
