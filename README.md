@@ -1,16 +1,24 @@
-# React + Vite
+# Sweet Layers 🍰
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_Handcrafted cakes, one layer at a time._
 
-Currently, two official plugins are available:
+Sweet Layers is a browsable cake catalog for a home-bakery brand, built as a React learning project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Screenshot
 
-## React Compiler
+![Sweet Layers homepage](./sweet-layers-preview.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- 🍰 **11 real cakes** — each with a name, photo, flavor, customer rating, and price
+- 🏷️ **Flavor filtering** — narrow the collection down to Chocolate, Vanilla, Red Velvet, Coffee, Cheesecake, Pistachio, Matcha, or view All
+- 🔢 **Live cake count** — updates instantly as filters or search change
+- 📱 **Responsive grid layout** — cards reflow cleanly across different screen sizes
+- 🧭 **Sticky navigation bar** — smooth-scrolls to Home, Cakes, About, and Contact sections
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Bootstrap](https://getbootstrap.com/)
+- Custom CSS
