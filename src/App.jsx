@@ -13,6 +13,8 @@ import { useState } from 'react';
 //blue print for just ONE cake card
 //instead of making like 11 different cake cards, just make one template
 //and pass the data through it using props! #smartgirlmoment
+
+//child component
 function CakeItem({ image, title, flavor, rating, price }) {
   return (
     <div className="card m-2" style={{ width: '18rem', margin: '10px'}}>
@@ -29,6 +31,8 @@ function CakeItem({ image, title, flavor, rating, price }) {
 
 
 //display  - main component where everything lives inside of
+
+//parent component
 function App() { //cakes is an array of objects that contains the information for each cake. 
   //so here is all the data lives, we write it here and itll pass through fx CakeItem to be displayed as cards
 
