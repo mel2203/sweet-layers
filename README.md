@@ -6,7 +6,7 @@ Sweet Layers is a browsable cake catalog for a home-bakery brand, built as a Rea
 
 ## Screenshot
 
-![Sweet Layers homepage](./sweet-layers-preview.png)
+![Sweet Layers homepage](sweet-layers-preview.png)
 
 ## Features
 
@@ -16,9 +16,13 @@ Sweet Layers is a browsable cake catalog for a home-bakery brand, built as a Rea
 - 📱 **Responsive grid layout** — cards reflow cleanly across different screen sizes
 - 🧭 **Sticky navigation bar** — smooth-scrolls to Home, Cakes, About, and Contact sections
 
-## Tech Stack
+## Built with
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - [Bootstrap](https://getbootstrap.com/)
 - Custom CSS
+
+## Live demo
+
+[View live demo]
