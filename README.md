@@ -25,4 +25,4 @@ Sweet Layers is a browsable cake catalog for a home-bakery brand, built as a Rea
 
 ## Live demo
 
-[View live demo]
+[View live demo] [text](https://sweet-layers-six.vercel.app)
